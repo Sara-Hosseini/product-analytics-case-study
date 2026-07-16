@@ -1,118 +1,226 @@
 # Product Analytics Case Study
 ## User Retention, Funnel Analytics, Feature Adoption & A/B Testing
 
-An end-to-end product analytics portfolio project built around a fictional European mobility platform.
+An end-to-end Product Analytics portfolio project that simulates a real-world European mobility platform and demonstrates how behavioural event data can be transformed into actionable business decisions using Python, SQL, SQLite, statistical analysis, and data visualisation.
 
-The project demonstrates how behavioural event data can be transformed into decision-ready product insights using **Python, SQL, SQLite, statistical testing, and automated data-quality validation**.
+The project follows a complete analytics workflow similar to modern product organisations, covering data generation, validation, SQL analytics, exploratory data analysis, experimentation, and executive-level business recommendations.
 
 The analysis focuses on:
 
-- user activation and conversion
-- product funnel performance and drop-off
+- User activation and conversion
+- Product funnel performance and drop-off
 - Day 1, Day 7, and Day 30 retention
-- monthly cohort behaviour
-- feature adoption
-- customer segmentation
-- A/B test evaluation
-- management-ready business recommendations
+- Monthly cohort behaviour
+- Feature adoption
+- Customer segmentation
+- A/B testing
+- Executive business recommendations
 
-> All datasets are synthetic and contain no personally identifiable information.
+> **Note:** All datasets are synthetic and contain no personally identifiable information.
 
 ---
 
-## Project Snapshot
+# Project Preview
+
+<table>
+<tr>
+<td width="50%">
+<img src="images/33_executive_kpi_tiles.png" alt="Executive KPI Dashboard">
+</td>
+<td width="50%">
+<img src="images/23_conversion_funnel.png" alt="Conversion Funnel">
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+<img src="images/21_cohort_retention_heatmap.png" alt="Cohort Retention Heatmap">
+</td>
+<td width="50%">
+<img src="images/32_experiment_dashboard.png" alt="A/B Testing Dashboard">
+</td>
+</tr>
+</table>
+
+---
+
+# Project Snapshot
 
 | Metric | Result |
 |---|---:|
 | Users | 5,000 |
-| Behavioural events | 141,813 |
-| Completed bookings | 2,731 |
-| Total simulated revenue | €39,589.80 |
-| Data period | January 2024 – June 2025 |
-| Automated validation checks | 23 passed |
-| Pytest data-quality tests | 25 passed |
-| Control conversion rate | 26.9% |
-| Treatment conversion rate | 30.5% |
-| Experiment uplift | +3.6 percentage points |
+| Behavioural Events | 141,813 |
+| Completed Bookings | 2,731 |
+| Total Simulated Revenue | €39,589.80 |
+| Data Period | January 2024 – June 2025 |
+| Validation Checks | 23 Passed |
+| Automated Tests | 25 Passed |
+| Control Conversion Rate | 26.9% |
+| Treatment Conversion Rate | 30.5% |
+| Experiment Uplift | +3.6 percentage points |
 
 ---
 
-## Business Problem
+# Business Problem
 
-The fictional mobility platform wants to understand:
+A fictional European mobility platform wants to answer the following business questions:
 
-1. Where users abandon the signup-to-booking funnel.
-2. Which acquisition channels and platforms produce the strongest users.
-3. Whether engagement features are associated with better retention and conversion.
-4. How user behaviour changes across signup cohorts.
-5. Whether a simplified booking flow improves conversion.
-6. Which product actions should be prioritised by management.
-
----
-
-## Key Findings
-
-### Acquisition quality
-
-Referral was the strongest acquisition channel:
-
-- approximately **40.0% conversion**
-- approximately **10.9% activation within seven days**
-
-Paid Search performed substantially lower:
-
-- approximately **23.5% conversion**
-- approximately **5.0% activation**
-
-This suggests that acquisition volume should not be evaluated without downstream user quality.
-
-### Platform performance
-
-iOS users had the highest conversion rate at approximately **30.0%**, followed by Android at **28.8%** and Web at **24.0%**.
-
-The Web booking journey should therefore be investigated for product or usability friction.
-
-### Feature adoption
-
-Users who enabled notifications or added a favourite location showed slightly longer average engagement duration.
-
-These findings indicate association rather than proven causation and should be validated through controlled experiments.
-
-### Experiment performance
-
-The `simplified_booking_flow` treatment increased conversion from approximately **26.9% to 30.5%**, an absolute uplift of around **3.6 percentage points**.
-
-The experiment analysis includes conversion, revenue, uplift, confidence intervals, and statistical significance checks.
+1. Where do users abandon the booking funnel?
+2. Which acquisition channels deliver the highest-quality users?
+3. Which platforms perform best?
+4. Which product features improve retention?
+5. How does user behaviour evolve across cohorts?
+6. Does a simplified booking flow improve conversion?
+7. Which product initiatives should be prioritised?
 
 ---
 
-## Business Recommendations
+# Key Findings
 
-1. Investigate the Web booking journey and prioritise the highest-friction funnel step.
-2. Scale referral acquisition while monitoring cost and user quality.
-3. Review Paid Search targeting, landing experience, and campaign economics.
-4. Test contextual prompts for notification enablement and favourite-location adoption.
-5. Continue evaluating the simplified booking flow before full rollout.
-6. Monitor results by platform and acquisition channel to detect heterogeneous experiment effects.
+## Acquisition Quality
+
+Referral users produced the highest-quality traffic.
+
+- ~40.0% conversion
+- ~10.9% activation within seven days
+
+Paid Search produced substantially weaker users.
+
+- ~23.5% conversion
+- ~5.0% activation
+
+**Business Insight**
+
+Acquisition volume alone should never determine marketing investment. Referral users consistently generated higher downstream business value.
+
+---
+
+## Platform Performance
+
+Conversion rates:
+
+- iOS ≈ 30.0%
+- Android ≈ 28.8%
+- Web ≈ 24.0%
+
+**Business Insight**
+
+The Web booking journey should be prioritised for UX investigation and optimisation.
+
+---
+
+## Feature Adoption
+
+Users enabling notifications and favourite locations demonstrated longer engagement.
+
+**Business Insight**
+
+The relationship is observational rather than causal and should be validated through controlled experimentation.
+
+---
+
+## Experiment Performance
+
+The **simplified_booking_flow** experiment increased conversion from **26.9%** to **30.5%**, representing an uplift of approximately **3.6 percentage points**.
+
+The analysis includes:
+
+- Statistical significance testing
+- 95% confidence intervals
+- Revenue comparison
+- Booking-rate comparison
+
+---
+
+# Exploratory Data Analysis (Phase 3)
+
+Phase 3 extends the SQL analytics layer with a production-style Python exploratory analysis workflow consisting of six dedicated notebooks.
+
+The notebooks analyse the raw behavioural datasets directly using:
+
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SciPy
+
+Every analytical section follows the same professional structure:
+
+> **Business Question → Analysis → Visualisation → Business Insight → Recommendation**
+
+## Notebooks
+
+| Notebook | Description |
+|---|---|
+| `01_data_overview.ipynb` | Dataset overview, schema validation, descriptive statistics, correlations |
+| `02_user_behaviour.ipynb` | User segmentation by country, platform, acquisition channel, age group and device |
+| `03_retention_analysis.ipynb` | D1 / D7 / D30 retention, cohort analysis, retention curves and heatmaps |
+| `04_funnel_analysis.ipynb` | Funnel conversion, abandonment analysis and optimisation opportunities |
+| `05_ab_testing.ipynb` | Experiment evaluation using confidence intervals and statistical testing |
+| `06_executive_summary.ipynb` | Executive dashboard, KPI summary and prioritised product recommendations |
+
+Every important figure is exported as a standalone PNG into the `images/` folder.
+
+---
+
+# Business Recommendations
+
+1. Optimise the Web booking journey.
+2. Scale Referral acquisition while monitoring user quality.
+3. Improve Paid Search targeting and landing pages.
+4. Increase feature adoption through contextual prompts.
+5. Continue monitoring the booking-flow experiment before full rollout.
+6. Monitor KPIs by platform and acquisition channel.
+7. Validate behavioural insights through future experiments.
 
 Detailed findings are available in:
 
-[`insights/phase2_summary.md`](insights/phase2_summary.md)
+- `insights/phase2_summary.md`
+- `notebooks/`
 
 ---
 
-## Technical Stack
+# Technical Stack
 
-- **Python:** synthetic data generation, validation and database loading
-- **SQL / SQLite:** KPI analysis, funnels, cohorts, retention, segmentation and experimentation
-- **Pandas / NumPy:** data generation and processing
-- **Pytest:** automated data-quality tests
-- **Power BI:** dashboard planned
-- **Git / GitHub:** version control and project documentation
+## Programming & Analytics
+
+- Python
+- SQL
+- SQLite
+- Pandas
+- NumPy
+- SciPy
+
+## Data Visualisation
+
+- Matplotlib
+- Seaborn
+
+## Product Analytics
+
+- KPI Reporting
+- Funnel Analysis
+- Cohort Analysis
+- Retention Analysis
+- Customer Segmentation
+- Feature Adoption
+- A/B Testing
+- Statistical Significance Testing
+
+## Engineering & Quality
+
+- Automated Data Validation
+- Pytest
+- Git
+- GitHub
+
+## Business Intelligence
+
+- Power BI *(Phase 4 – Planned)*
 
 ---
 
-## Repository Structure
+# Repository Structure
 
 ```text
 product-analytics-retention/
@@ -120,43 +228,72 @@ product-analytics-retention/
 ├── requirements.txt
 ├── data/
 │   ├── raw/
-│   │   ├── users.csv
-│   │   ├── events.csv
-│   │   └── experiments.csv
 │   ├── processed/
 │   └── README.md
 ├── src/
-│   ├── config.py
 │   ├── generate_data.py
 │   ├── validate_data.py
 │   ├── build_database.py
-│   └── run_sql.py
+│   ├── run_sql.py
+│   └── eda_utils.py
 ├── sql/
-│   ├── 00_schema.sql
-│   ├── 01_data_quality.sql
-│   ├── 02_business_overview.sql
-│   ├── 03_kpi_dashboard.sql
-│   ├── 04_funnel_analysis.sql
-│   ├── 05_retention.sql
-│   ├── 06_cohort_analysis.sql
-│   ├── 07_feature_adoption.sql
-│   ├── 08_segmentation.sql
-│   ├── 09_ab_testing.sql
-│   └── 10_business_recommendations.sql
-├── insights/
-│   └── phase2_summary.md
 ├── notebooks/
-├── dashboard/
+│   ├── 01_data_overview.ipynb
+│   ├── 02_user_behaviour.ipynb
+│   ├── 03_retention_analysis.ipynb
+│   ├── 04_funnel_analysis.ipynb
+│   ├── 05_ab_testing.ipynb
+│   └── 06_executive_summary.ipynb
 ├── images/
+├── insights/
+├── dashboard/
 └── tests/
-    └── test_data_quality.py
 ```
 
 ---
 
-## Future Improvements
+# Future Improvements
 
-- Interactive Power BI dashboard
-- Python exploratory data analysis
-- Executive presentation
-- Product analytics blog article
+- Interactive Power BI Executive Dashboard
+- Executive Presentation Deck
+- Product KPI Monitoring Dashboard
+- Additional Product Experimentation Case Studies
+- Product Analytics Technical Blog
+- Cloud Deployment of Analytics Assets
+
+---
+
+# Key Skills Demonstrated
+
+- Product Analytics
+- Business Analytics
+- SQL
+- Python
+- Exploratory Data Analysis (EDA)
+- Data Validation
+- KPI Reporting
+- Dashboard Design
+- Funnel Analysis
+- Cohort Analysis
+- Retention Analysis
+- Customer Segmentation
+- A/B Testing
+- Statistical Analysis
+- Business Storytelling
+- Executive Reporting
+
+---
+
+# Author
+
+**Sara Hosseini**
+
+Business & Data Analyst
+
+Berlin, Germany
+
+- LinkedIn: https://www.linkedin.com/in/sara-hosseini-a22353267/
+- Portfolio: https://sara-hosseini.github.io
+- GitHub: https://github.com/Sara-Hosseini
+
+⭐ Feel free to explore the project and connect with me.
