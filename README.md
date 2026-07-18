@@ -302,8 +302,8 @@ product-analytics-retention/
 
 Berlin, Germany
 
-- **LinkedIn:** https://www.linkedin.com/in/sara-hosseini-a22353267/
-- **GitHub:** https://github.com/Sara-Hosseini
+- **LinkedIn:** https://www.linkedin.com/in/sara-hosseini-analyst/
+- **GitHub:** github.com/Sara-Hosseini
 - **Email:** sarahosseinigh@gmail.com
 
 Feel free to explore the project, provide feedback, or connect with me.
