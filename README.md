@@ -238,7 +238,7 @@ Detailed findings are available in:
 ## Repository Structure
 
 ```text
-product-analytics-retention/
+product-analytics-case-study/
 ├── README.md
 ├── requirements.txt
 ├── data/
