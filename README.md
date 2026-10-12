@@ -12,9 +12,9 @@ An end-to-end product analytics project for a simulated European mobility app. I
 
 | Evidence | Where to find it |
 |---|---|
-| **10 SQL analysis scripts** (~1,750 lines): KPIs, funnel, retention, cohorts, segmentation, A/B test, using CTEs and window functions | [`sql/`](sql) |
+| **10 SQL analysis scripts + schema** (1,746 lines): KPIs, funnel, retention, cohorts, segmentation, A/B test, using CTEs and window functions | [`sql/`](sql) |
 | **6 Python notebooks**: EDA, retention curves, funnel by segment, z-test and Welch t-test with 95% CIs | [`notebooks/`](notebooks) |
-| **6-page Power BI report** with about 30 DAX measures (D1/D7/D30 retention, ARPU uplift, funnel rates) | [`dashboard/Product_Analytics_Dashboard.pbix`](dashboard) |
+| **6-page Power BI report** with 27 DAX measures across 56 visuals (D1/D7/D30 retention, ARPU uplift, funnel rates) | [`dashboard/Product_Analytics_Dashboard.pbix`](dashboard) |
 | **Data quality**: 23 validation checks and 25 pytest tests, all passing | [`src/validate_data.py`](src/validate_data.py), [`tests/`](tests) |
 | **Written findings & recommendations** | [`insights/phase2_summary.md`](insights/phase2_summary.md) |
 | **Case study page** | [sara-hosseini.github.io/project-analytics.html](https://sara-hosseini.github.io/project-analytics.html) |
@@ -71,7 +71,18 @@ Period: January 2024 to June 2025. Full data dictionary: [`data/README.md`](data
 
 **4. Engagement features go with retention, but the link is observational.** Day 30 retention rises from 2.0% for users who adopted none of three engagement features to 14.7% for users who adopted all three. That is a correlation, so it should be tested before anyone claims an effect.
 
-**5. The experiment worked.** The simplified booking flow lifted conversion from **26.9% to 30.4% (+3.6 pp, z = 2.78, p < 0.01)** and ARPU from €7.02 to €8.80.
+**5. The experiment worked.** The simplified booking flow lifted conversion and revenue per user:
+
+| Metric | Control | Treatment | Difference |
+|---|---:|---:|---:|
+| Users | 2,484 | 2,516 | |
+| Converted users | 668 | 766 | |
+| Conversion rate | 26.89% | 30.45% | **+3.55 pp** (+13.2% relative) |
+| 95% CI of difference | | | 1.05 to 6.06 pp |
+| Two-proportion z-test | | | z = 2.78, p = 0.006 |
+| ARPU | €7.02 | €8.80 | +€1.78 (Welch t-test p < 0.001) |
+
+Rates are reported to two decimals so the difference adds up exactly.
 
 ### Recommendations
 
